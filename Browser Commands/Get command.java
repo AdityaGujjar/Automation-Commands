@@ -23,9 +23,7 @@ public class Get_Command {
 		
 		driver.get("https://www.youtube.com/?gl=IN");
 		
-		//Notes: Here the driver initiated Youtube in the same tab replacing Facebook
 		
-
 	}
 
 }
