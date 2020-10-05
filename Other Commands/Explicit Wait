@@ -1,0 +1,35 @@
+package special_commands;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Explicit_wait {
+
+	public static void main(String[] args) {
+		// This class givesus the code for Explicit wait
+		
+		//Setting System properties
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\chromedriver_win32\\latest\\chromedriver_win32\\chromedriver.exe");
+		
+		//Initiating ChromeDriver
+		
+		ChromeDriver driver=new ChromeDriver();
+		
+		//Starting the actual program
+		
+		driver.get("https://www.facebook.com/");
+		
+		driver.manage().window().maximize();
+		
+		WebDriverWait myWaitvar =new WebDriverWait(driver, 10);
+		
+		myWaitvar.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("email")));
+		
+		driver.findElement(By.id("email")).sendKeys("Aditya");
+
+	}
+
+}
