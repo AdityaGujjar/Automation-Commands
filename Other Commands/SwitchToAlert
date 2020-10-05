@@ -1,0 +1,30 @@
+package special_commands;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Switch_to_alert {
+
+	//@Test
+	public static void main(String[] args) {
+		// In this Class, we are going to learn to how to swicth between the main window and alert pop up
+		//Setting up system properties
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\chromedriver_win32\\latest\\chromedriver_win32\\chromedriver.exe");
+		
+		//Initiating the Chrome Driver
+		
+		ChromeDriver driver=new ChromeDriver();
+		
+		//Starting the actual program
+		
+		driver.get("https://www.facebook.com");
+		
+		driver.manage().window().maximize();
+		
+		String Text=driver.switchTo().alert().getText();
+		
+		System.out.println(Text);
+	}
+
+}
