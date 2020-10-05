@@ -1,0 +1,34 @@
+package special_commands;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Implicit_wait {
+
+	public static void main(String[] args) {
+		// This class is used to create implicit wait in the code
+		
+		//Setting up system properties
+		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\chromedriver_win32\\latest\\chromedriver_win32\\chromedriver.exe");
+		
+		//Initiating ChromeDriver
+		
+		ChromeDriver driver=new ChromeDriver();
+		
+		//Starting the actual code
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.get("https://www.facebook.com/");
+		
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.id("email")).sendKeys("Aditya");
+		
+		//driver.close();
+
+	}
+
+}
